@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 30px;
+  padding: 0; 
+  flex-wrap: wrap;
+ }
+  .slidershow{
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+    
+  }
+  
+  .middle{
+    position: absolute;
+    top:20px;
+  left: 50%;
+  transform: translateX(-50%);
+  }
+  .navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  .bar{
+    width: 50px;
+    height: 10px;
+    border: 2px solid #fff;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .bar:hover{
+    background: #fff;
+  }
+  
+  input[name="r"]{
+      position: absolute;
+      visibility: hidden;
+  }
+  
+  .slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 0.6s;
+  }
+  .slide img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  #r1:checked ~ .s1{
+    margin-left: 0;
+  }
+  #r2:checked ~ .s1{
+    margin-left: -20%;
+  }
+  #r3:checked ~ .s1{
+    margin-left: -40%;
+  }
+  #r4:checked ~ .s1{
+    margin-left: -60%;
+  }
+  #r5:checked ~ .s1{
+    margin-left: -80%;
+  }
+  .details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  position: relative;
+  top: 20px;
+}
+
+.details h1 {
+  color: #007bff;
+}
+
+.details a {
+  color: #007bff;
+}
+    </style>
+</head>
+<body>
+    <!-- <div class="slidershow">
+        <div class="slides">
+          <input type="radio" name="r" id="r1" checked>
+          <input type="radio" name="r" id="r2">
+          <input type="radio" name="r" id="r3">
+          <input type="radio" name="r" id="r4">
+          <input type="radio" name="r" id="r5">
+          <div class="slide s1">
+            <img src="/thumb_large_262293c9-ef91-4943-a626-76049c4b7f48.jpg" alt="utopia">
+          </div>
+          <div class="slide">
+            <img src="/638298584950783536-0909231214551455.webp" alt="utopia">
+          </div>
+          <div class="slide">
+            <img src="/bfb15cde-0d49-41df-9e55-7e02a8c1fa8a-removebg.png" alt="utopia">
+          </div>
+          <div class="slide">
+            <img src="/rentlogo.jpg" alt="utopia">
+          </div>
+          <div class="slide">
+            <img src="/2-bhk-independent-apartment-in-newdelhi-793d33a22ba515a8ac4d81ed0c7347d8_thumb.jpg" alt="utopia">
+          </div>
+        </div>
+        <div class="navigation">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            <label for="r4" class="bar"></label>
+            <label for="r5" class="bar"></label>
+        </div>
+    </div> -->
+    <div class="slidershow middle">
+        <div class="slides">
+          <input type="radio" name="r" id="r1" checked>
+          <input type="radio" name="r" id="r2">
+          <input type="radio" name="r" id="r3">
+          <input type="radio" name="r" id="r4">
+          <input type="radio" name="r" id="r5">
+          <div class="slide s1">
+            <img src="/thumb_large_262293c9-ef91-4943-a626-76049c4b7f48.jpg" alt="utopia">
+          </div>
+          <div class="slide">
+            <img src="/638298584950783536-0909231214551455.webp" alt="utopia">
+          </div>
+          <div class="slide">
+            <img src="/bfb15cde-0d49-41df-9e55-7e02a8c1fa8a-removebg.png" alt="utopia">
+          </div>
+          <div class="slide">
+            <img src="/rentlogo.jpg" alt="utopia">
+          </div>
+          <div class="slide">
+            <img src="/2-bhk-independent-apartment-in-newdelhi-793d33a22ba515a8ac4d81ed0c7347d8_thumb.jpg" alt="utopia">
+          </div>
+        </div>
+        <div class="navigation">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            <label for="r4" class="bar"></label>
+            <label for="r5" class="bar"></label>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
+    <div class="details">
+        <p> <h1>Owner: John Doe</h1> </p>
+        <p><strong>Bedroom's:</strong> 1BHK</p>
+        <p><strong>Locality:</strong> Pydhonie</p>
+        <p><strong>Address:</strong> xyz, yyz, zzz, Bombay-3</p>
+        <p><strong>Location:</strong> <a href="https://www.google.com/search?q=pydhonie">live location</a></p>
+        <p><strong>Contact:</strong> 9152549454</p>
+        <p><strong>Type:</strong> Rent</p>
+        <p><strong>Amount:</strong> 35k/month</p>
+        <p><strong>Size:</strong> 500 sq.ft</p>
+        <p><strong>Availability:</strong> after 1 month</p>
+    </div>
+</body>
+</html>

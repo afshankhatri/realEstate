@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 90px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: #ff6600;
+}
+
+.navbar-menu li::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #ff6600;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s;
+}
+
+.navbar-menu li:hover::before {
+    transform: scaleX(1);
+}
+.navbar-search {
+    display: flex;
+    align-items: center;
+    background-color: #444;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 20px; /* Add some spacing */
+}
+
+.navbar-search input[type="text"] {
+    border: none;
+    background: none;
+    padding: 5px;
+    color: #fff;
+    width: 200px; /* Adjust the width as needed */
+}
+
+.navbar-search button {
+    background-color: #ff6600;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+}
+ /* Define styles for the container */
+ .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for the left column (image) */
+.left-column {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Style for the right column (details) */
+.right-column {
+    flex: 2;
+    padding: 20px;
+}
+
+/* Style for the image */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.property-details {
+    display: flex;
+    max-width: 100%;
+    height:auto ;
+    margin: 20px ;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.property-images {
+    width: 50%;
+    padding: 10px;
+}
+
+.property-images img {
+    width: 450px;
+    height: 300px;
+}
+
+.property-info {
+    width: 50%;
+    padding: 20px;
+}
+
+h2 {
+    color: #007bff;
+}
+
+.property-info p {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.view-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: #0056b3;
+}
+.viewonclick{
+    
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    
+}
+.viewonclick:hover{
+    color: black;
+    background-color: darkgray;
+    border-radius: 30%;
+}
+
+/* commercial and residencial page*/
+#body1{
+    display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+}
+.container1{
+    display: flex;
+            justify-content: center;
+            align-items: center;
+}
+#head{
+    display: flex;
+    justify-content: center;
+}
+.hii{
+    display: flex;
+    justify-content: center;
+}
+.hiii{
+    background-color: aqua;
+    height: 400px;
+    width: 400px;
+    font-size: x-large;
+    margin-top: 100px;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5%;
+    border: none;
+    box-shadow: 0px 0px 10px grey;
+
+}
+.hiii:hover {
+    transform: scale(1.1);
+    border-radius: 5%;
+    cursor: pointer;
+
+}
+#what_type{
+    display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+}
+
+#commer_construction{
+    display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+}
+#hoo{
+    display: flex;
+    justify-content: center;
+}
+#gobck{
+    background-color: burlywood;
+    color: beige;
+    height: 50px;
+    width: 100px;
+    font-size: x-large;
+    margin-top: 100px;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 10%;
+    border: none;
+    box-shadow: 0px 0px 10px grey;
+
+}
+#gobck:hover {
+    background-color: beige;
+    color: burlywood;
+    transform: scale(2);
+    border-radius: 30%;
+    cursor: pointer;
+
+}
+
+
+
+
+
+

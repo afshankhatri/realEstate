@@ -1,0 +1,19 @@
+pending implementatioin's
+
+<!-- here make a login page in which user will log in(without which he wont be abale to go ahead) regester if new (on the site) one tab for the seller(owner of the house who is going to sell) to put his home details -->
+
+<!-- user interfave  for purchsing -->
+<!-- user interface for seliing  -->
+
+<!-- after login 2 options 1)commercial prop.    2)residencial prop. 
+    {though our main focus should be on residencial prop ,then too we've to add that option(just to signify that this is our future plan)} -->
+    [commercial pe click kar ne k baad ek tab khulaga jis likha hoga sorry work in progress something like that]
+    [residencial pe click kia to pura aage ka view kar sakta hai]
+    
+<!-- residencial me ane k baad 2 options 1)owenership    2)rent -->
+<!-- then is k baad dono k andar k interfaces siilar honge (may be 19/20)  -->
+<!-- search option dena hai is se home k koi specific catogory i.e> ( prticular area / budget / specified aount ) k basis pe ghr sort ho k milee-->
+<!-- filter option just similar to (option provided by other e-commerce website to filte brand / gender / size / aount / ratings etc.) -->
+
+<!-- if time permits UI/UX pe thoda dhiyan dege k better ho!!! -->
+

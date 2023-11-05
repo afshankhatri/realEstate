@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Urban Utopia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Apply a black and grey background to the body */
+body {
+    background: linear-gradient(135deg, #333, #666);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.5s;
+}
+
+/* Style the header section with a background image */
+header {
+    text-align: center;
+    /* background-image: url('/urbanutopualogo.png'); /* Replace with your image path */
+    /* background-size: cover; */
+    color: white;
+    padding: 30px 0;
+    position: relative;
+}
+
+
+
+h1 {
+    font-size: 48px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Style the main content sections with a shadow and border */
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect to sections */
+section:hover {
+    transform: scale(1.02);
+}
+
+/* Style the headings in sections with a gradient text */
+h2 {
+    font-size: 32px;
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Style the paragraph text */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Style the list items */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Style the footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+/* Add a subtle glow effect to links */
+a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    color: #FFA500;
+    text-shadow: 0 0 10px #FFD700;
+}
+.header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+}
+
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Urban Utopia</h1>
+        <p>Your Dream, Your Address!</p>
+        <div class="header-content">
+            <img src="/urbanutopualogo.png" alt="logo">
+        </div>
+    </header>
+    
+    <section id="vision">
+        <h2>Our Vision</h2>
+        <p>At Urban Utopia, we believe that everyone deserves to find their perfect place to call home...</p>
+    </section>
+    <section id="meaning">
+        <h2>What Does "Urban Utopia" Mean?</h2>
+        <p>Our name, Urban Utopia, encapsulates our commitment to creating an ideal urban living experience...</p>
+    </section>
+    <section id="slogan">
+        <h2>Our Slogan</h2>
+        <p>"Turning Dreams into Addresses" reflects our dedication to making your dream home a reality...</p>
+    </section>
+    <section id="approach">
+        <h2>Our Unique Approach</h2>
+        <ul>
+            <li>No Brokerage, No Fees: We're proud to offer our services completely free of cost...</li>
+            <li>AI-Powered Assistance: Our intelligent AI chatbot is designed to understand your preferences...</li>
+            <li>Community Insights: We go beyond property listings...</li>
+        </ul>
+    </section>
+    <section id="join-us">
+        <h2>Join Us in Building Your Urban Utopia</h2>
+        <p>Whether you're a tenant in search of your dream apartment or a buyer looking for the perfect investment...</p>
+    </section>
+    <section id="future-vision">
+        <h2>Our Future Vision</h2>
+        <p>We are committed to expanding our services across India to empower every Indian to save their money from housing brokerage...</p>
+    </section>
+    <footer>
+        <p>Thank you for choosing Urban Utopia - where dreams meet addresses, and together, we build a brighter housing future.</p>
+    </footer>
+</body>
+</html>

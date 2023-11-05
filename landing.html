@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Urban Utopia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #333, #666);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background 0.5s;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+            position: relative;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 48px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            font-size: 32px;
+            background: linear-gradient(45deg, #FFA500, #FFD700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        a:hover {
+            color: #FFA500;
+            text-shadow: 0 0 10px #FFD700;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            background-color: rgb(90, 89, 89);
+            color: white;
+            height: 100px;
+            width: 150px;
+            font-size: x-large;
+            margin-top: 100px;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5%;
+            border: none;
+            box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            border-radius: 5%;
+            cursor: pointer;
+        }
+
+        .signin-signup {
+            display: flex;
+            justify-content: right;
+            gap: 10px;
+        }
+
+        .signin-button, .signup-button {
+            background-color: rgb(90, 89, 89);
+            color: #fff;
+            height: 30px;
+            width: 90px;
+            padding: 10px 20px;
+            font-size: 13px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        .signin-button:hover, .signup-button:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+/* pop up of sign in */
+        .overlay {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0%;
+            z-index: -1;
+            opacity: 0;
+            transition: 1s;
+        }
+
+        .showoverlay {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .sign-in-form {
+            width: 300px;
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            position: absolute;
+            left: 50%;
+            top: -50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: 1.3s;
+            z-index: 9;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .showsign-in-form {
+            top: 50%;
+        }
+
+        .sign-in-form span {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .sign-in-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sign-in-form label {
+            color: #333;
+        }
+
+        .sign-in-form input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .sine-in {
+            height: 50px;
+            width: 300px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .sine-in:hover {
+            background-color: #0056b3;
+        }
+
+        .forgot-signup {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .forgot-signup a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 0;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            transition: background-color 0.2s;
+        }
+
+        .social-button:hover {
+            height: 40px;
+            width: 290px;
+            background-color: white;
+        }
+
+        .facebook-icon,
+        .google-icon {
+            width: 35px;
+            height: 35px;
+
+            /* pop up of sign up */
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="signin-signup">
+            <button class="signin-button" onclick="showmodal()">Sign In</button>
+            <a href="/signup.html"><button class="signup-button">Sign Up</button></a>
+        </div>
+
+        <!-- Popup for sign-in -->
+        <div class="overlay" onclick="closemodal()"></div>
+        <div class="sign-in-form" onclick="event.stopPropagation();">
+            <span id="close-form" onclick="closemodal()">&times;</span>
+            <form action="">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your email" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Your password" required>
+                </div>
+                <button class="sine-in">Login</button>
+            </form>
+            <div class="forgot-signup">
+                <a href="#">Forgot Password?</a>
+                <a href="#">Sign Up</a>
+            </div>
+
+            <br>
+            <hr>
+            <br>
+
+            <div id="social-signin">
+                <h3>Or Sign In with:</h3>
+                <button id="google-signin" class="social-button">
+                    <img class="google-icon" src="/google.png" alt="Google">
+                </button>
+                <button id="facebook-signin" class="social-button">
+                    <img class="facebook-icon" src="/facebook.png" alt="Facebook">
+                </button>
+            </div>
+        </div>
+                <!-- Popup for sign-up-->
+
+        <h1>Welcome to Urban Utopia</h1>
+        <p>Turning Dreams into Addresses !</p>
+        <div class="header-content">
+            <img src="/urbanutopualogo.png" alt="logo">
+            <a href="/comm&resi.html">
+                <button>Get started</button>
+            </a>
+        </div>
+    </header>
+
+    <section id="vision">
+        <h2>Our Vision</h2>
+        <p>At Urban Utopia, we believe that everyone deserves to find their perfect place to call home...</p>
+    </section>
+    <section id="meaning">
+        <h2>What Does "Urban Utopia" Mean?</h2>
+        <p>Our name, Urban Utopia, encapsulates our commitment to creating an ideal urban living experience...</p>
+    </section>
+    <section id="slogan">
+        <h2>Our Slogan</h2>
+        <p>"Turning Dreams into Addresses" reflects our dedication to making your dream home a reality...</p>
+    </section>
+    <section id="approach">
+        <h2>Our Unique Approach</h2>
+        <ul>
+            <li>No Brokerage, No Fees: We're proud to offer our services completely free of cost...</li>
+            <li>AI-Powered Assistance: Our intelligent AI chatbot is designed to understand your preferences...</li>
+            <li>Community Insights: We go beyond property listings...</li>
+        </ul>
+    </section>
+    <section id="join-us">
+        <h2>Join Us in Building Your Urban Utopia</h2>
+        <p>Whether you're a tenant in search of your dream apartment or a buyer looking for the perfect investment...</p>
+    </section>
+    <section id="future-vision">
+        <h2>Our Future Vision</h2>
+        <p>We are committed to expanding our services across India to empower every Indian to save their money from housing brokerage...</p>
+    </section>
+    <footer>
+        <p>Thank you for choosing Urban Utopia - where dreams meet addresses, and together, we build a brighter housing future.</p>
+    </footer>
+
+    <script>
+        function showmodal() {
+            document.querySelector('.overlay').classList.add('showoverlay');
+            document.querySelector('.sign-in-form').classList.add('showsign-in-form');
+        }
+
+        function closemodal() {
+            document.querySelector('.overlay').classList.remove('showoverlay');
+            document.querySelector('.sign-in-form').classList.remove('showsign-in-form');
+        }
+    </script>
+    
+</body>
+</html>
