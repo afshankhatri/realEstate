@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            height: 100%;
+        }
+        .left-half, .right-half {
+            width: 50%;
+            height: 100%;
+            border: 2px solid #ccc;
+            position: relative;
+        }
+        .left-half {
+        /* Existing styles */
+        flex-wrap: wrap; /* Allow images to wrap to next line */
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: calc(100% - 20px); /* Set maximum height for the container */
+    }
+
+    .left-half img {
+        /* Existing styles */
+        margin: 5px; /* Add some margin around each image */
+        border: 2px solid #ccc; /* Add border to each image for separation */
+        border-radius: 5px; /* Add border-radius for rounded corners */
+    }
+        .submit-text {
+            position: absolute;
+            bottom: 150px;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-text:hover {
+            background-color: #45a049;
+        }
+        .form-container {
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="tel"],
+        .form-container select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .form-container input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .form-container button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-container button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="left-half">
+            <img src="add-image.png" alt="adding frame">
+            <p class="submit-text">Drag and drop image or select file from folder</p>
+        </div> -->
+        <div class="left-half" id="leftHalf">
+            <img src="add-image.png" alt="adding frame">
+            <p class="submit-text" id="submitText">Drag and drop image or select file from folder</p>
+        </div>
+        
+        <div class="right-half">
+            <div class="form-container">
+                <form action="#">
+                    <label for="house-type">House Type:</label>
+                    <select id="house-type" name="house-type">
+                        <option value="1RK">1RK</option>
+                        <option value="1BHK">1BHK</option>
+                        <option value="2BHK">2BHK</option>
+                        <option value="3BHK">3BHK</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label for="locality">Locality:</label>
+                    <input type="text" id="locality" name="locality">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address">
+                    <label for="location">Google Live Location Link:</label>
+                    <input type="text" id="location" name="location">
+                    <label for="contact">Contact Number:</label>
+                    <input type="tel" id="contact" name="contact">
+                    <label>Selling Type:</label>
+                    <input type="checkbox" id="rent" name="selling-type" value="rent">
+                    <label for="rent">Rent</label>
+                    <input type="checkbox" id="sell" name="selling-type" value="sell">
+                    <label for="sell">Sell</label>
+                    <label for="price">Asking Price:</label>
+                    <input type="text" id="price" name="price">
+                    <label for="price">Area:</label>
+                    <input type="text" id="Area" name="area">
+                    <label for="price">Availability Period:</label>
+                    <input type="text" id="Availability" name="Availability">
+                    <label for="price">Description:</label>
+                    <input type="text" id="description" name="description">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const leftHalf = document.getElementById('leftHalf');
+        const submitText = document.getElementById('submitText');
+    
+        leftHalf.addEventListener('dragover', handleDragOver, false);
+        leftHalf.addEventListener('dragleave', handleDragLeave, false);
+        leftHalf.addEventListener('drop', handleFileSelect, false);
+        submitText.addEventListener('click', openFileSelector, false);
+    
+        function handleDragOver(event) {
+            event.preventDefault();
+            leftHalf.classList.add('highlight');
+        }
+    
+        function handleDragLeave(event) {
+            event.preventDefault();
+            leftHalf.classList.remove('highlight');
+        }
+    
+        function handleFileSelect(event) {
+            event.preventDefault();
+            leftHalf.classList.remove('highlight');
+    
+            const files = event.dataTransfer.files;
+            handleFiles(files);
+        }
+    
+        function openFileSelector(event) {
+            event.preventDefault();
+            const fileInput = document.createElement('input');
+            fileInput.setAttribute('type', 'file');
+            fileInput.setAttribute('accept', 'image/*');
+            fileInput.setAttribute('multiple', true);
+            fileInput.addEventListener('change', function() {
+                const files = this.files;
+                handleFiles(files);
+            });
+            fileInput.click();
+        }
+    
+        function handleFiles(files) {
+            files = [...files];
+            files.forEach(uploadFile);
+        }
+    
+        function uploadFile(file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const image = new Image();
+                image.src = e.target.result;
+                image.classList.add('preview-image');
+    
+                // Resize the image to match the size of "add-image.png"
+                image.onload = function() {
+                    const maxWidth = leftHalf.querySelector('img').clientWidth;
+                    const maxHeight = leftHalf.querySelector('img').clientHeight;
+                    const width = Math.min(maxWidth, image.width);
+                    const height = Math.min(maxHeight, image.height);
+    
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+    
+                    canvas.width = width;
+                    canvas.height = height;
+    
+                    ctx.drawImage(image, 0, 0, width, height);
+    
+                    const resizedImage = new Image();
+                    resizedImage.src = canvas.toDataURL('image/png');
+    
+                    leftHalf.appendChild(resizedImage);
+                };
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+    
+    
+    
+</body>
+</html>

@@ -5,175 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-   body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 30px;
-  padding: 0; 
-  flex-wrap: wrap;
- }
-  .slidershow{
-    width: 700px;
-    height: 400px;
-    overflow: hidden;
-    
-  }
-  
-  .middle{
-    position: absolute;
-    top:20px;
-  left: 50%;
-  transform: translateX(-50%);
-  }
-  .navigation{
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-  }
-  .bar{
-    width: 50px;
-    height: 10px;
-    border: 2px solid #fff;
-    margin: 6px;
-    cursor: pointer;
-    transition: 0.4s;
-  }
-  .bar:hover{
-    background: #fff;
-  }
-  
-  input[name="r"]{
-      position: absolute;
-      visibility: hidden;
-  }
-  
-  .slides{
-    width: 500%;
-    height: 100%;
-    display: flex;
-  }
-  
-  .slide{
-    width: 20%;
-    transition: 0.6s;
-  }
-  .slide img{
-    width: 100%;
-    height: 100%;
-  }
-  
-  #r1:checked ~ .s1{
-    margin-left: 0;
-  }
-  #r2:checked ~ .s1{
-    margin-left: -20%;
-  }
-  #r3:checked ~ .s1{
-    margin-left: -40%;
-  }
-  #r4:checked ~ .s1{
-    margin-left: -60%;
-  }
-  #r5:checked ~ .s1{
-    margin-left: -80%;
-  }
-  .details {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  position: relative;
-  top: 20px;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .navbar {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            font-family: Arial, sans-serif; /* Set a fallback font */
+        }
+        
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-logo img {
+            width: 90px;
+            height: 60px;
+            margin-right: 10px;
+        }
+        
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .navbar-menu li {
+            position: relative;
+        }
+        
+        .navbar-menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .navbar-menu a:hover {
+            color: #ff6600;
+        }
+        
+        .navbar-menu li::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #ff6600;
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s;
+        }
+        
+        .navbar-menu li:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .navbar-search {
+            display: flex;
+            align-items: center;
+            background-color: #444;
+            border-radius: 5px;
+            padding: 5px;
+            margin-left: 20px; /* Add some spacing */
+        }
+        
+        .navbar-search input[type="text"] {
+            border: none;
+            background: none;
+            padding: 5px;
+            color: #fff;
+            width: 200px; /* Adjust the width as needed */
+        }
+        
+        .navbar-search button {
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+        }
 
-.details h1 {
-  color: #007bff;
-}
-
-.details a {
-  color: #007bff;
-}
+        /* .navbar-menu li.active::before {
+            transform: scaleX(1);
+        } */
     </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <!-- <div class="slidershow">
-        <div class="slides">
-          <input type="radio" name="r" id="r1" checked>
-          <input type="radio" name="r" id="r2">
-          <input type="radio" name="r" id="r3">
-          <input type="radio" name="r" id="r4">
-          <input type="radio" name="r" id="r5">
-          <div class="slide s1">
-            <img src="/thumb_large_262293c9-ef91-4943-a626-76049c4b7f48.jpg" alt="utopia">
-          </div>
-          <div class="slide">
-            <img src="/638298584950783536-0909231214551455.webp" alt="utopia">
-          </div>
-          <div class="slide">
-            <img src="/bfb15cde-0d49-41df-9e55-7e02a8c1fa8a-removebg.png" alt="utopia">
-          </div>
-          <div class="slide">
-            <img src="/rentlogo.jpg" alt="utopia">
-          </div>
-          <div class="slide">
-            <img src="/2-bhk-independent-apartment-in-newdelhi-793d33a22ba515a8ac4d81ed0c7347d8_thumb.jpg" alt="utopia">
-          </div>
+<div class="navbar">
+    <div class="navbar-logo">
+        <a href="/aboutus.html"> <img src="/urbanutopualogo.png" alt="logo" height="60px" width="90px"></a>
+    </div>
+    <ul class="navbar-menu" style="display: flex; align-items: center;">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/RK.html">RK</a></li>
+        <li><a href="/1bhk.html">1BHK</a></li>
+        <li>
+          <a href="/addHome.html" style="display: inline-block; align-items: center;">
+              <img src="/home.png" alt="Add Home" height="40px" width="40px" style="margin-right: 5px;">
+              <span style="display: block;">ADD</span>
+          </a>
+      </li>
+      
+        <li><a href="/2bhk.html">2BHK</a></li>
+        <li><a href="/3bhk.html">3BHK</a></li>
+        <li><a href="#">Filter</a></li>
+    </ul>
+
+
+    <!-- Add the search bar here -->
+    <div class="navbar-search">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+    </div>
+
+
+</div>
+<div class="cards">
+
+    <div class="property-details">
+        <div class="property-images">
+            <img src="/3bhk1b.webp" alt="Property Image">
         </div>
-        <div class="navigation">
-            <label for="r1" class="bar"></label>
-            <label for="r2" class="bar"></label>
-            <label for="r3" class="bar"></label>
-            <label for="r4" class="bar"></label>
-            <label for="r5" class="bar"></label>
+        <div class="property-images">
+            <img src="/3bhk1a.webp" alt="Property Image">
         </div>
-    </div> -->
-    <div class="slidershow middle">
-        <div class="slides">
-          <input type="radio" name="r" id="r1" checked>
-          <input type="radio" name="r" id="r2">
-          <input type="radio" name="r" id="r3">
-          <input type="radio" name="r" id="r4">
-          <input type="radio" name="r" id="r5">
-          <div class="slide s1">
-            <img src="/thumb_large_262293c9-ef91-4943-a626-76049c4b7f48.jpg" alt="utopia">
-          </div>
-          <div class="slide">
-            <img src="/638298584950783536-0909231214551455.webp" alt="utopia">
-          </div>
-          <div class="slide">
-            <img src="/bfb15cde-0d49-41df-9e55-7e02a8c1fa8a-removebg.png" alt="utopia">
-          </div>
-          <div class="slide">
-            <img src="/rentlogo.jpg" alt="utopia">
-          </div>
-          <div class="slide">
-            <img src="/2-bhk-independent-apartment-in-newdelhi-793d33a22ba515a8ac4d81ed0c7347d8_thumb.jpg" alt="utopia">
-          </div>
-        </div>
-        <div class="navigation">
-            <label for="r1" class="bar"></label>
-            <label for="r2" class="bar"></label>
-            <label for="r3" class="bar"></label>
-            <label for="r4" class="bar"></label>
-            <label for="r5" class="bar"></label>
+
+        <div class="property-info">
+            <h2>3BHK Property</h2>
+            <p><strong>Area:</strong> Null Bazar</p>
+            <p><strong>Description:</strong> This elegant 3 BHK house in South Bombay is a prime example of luxury living in one of the most iconic and historic neighborhoods in Mumbai. It combines modern comfort with a touch of classic charm, providing ample space for a family or individuals who value spacious living.</p>
+            <p><strong>Type:</strong> Ownership</p>
+            <p><strong>Owner:</strong> John Doe</p>
+            <a href="HD3BHK1.html"><button class="view-button">View Details</button></a>
+            <!-- Add more details here -->
         </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>
-    <div class="details">
-        <p> <h1>Owner: John Doe</h1> </p>
-        <p><strong>Bedroom's:</strong> 1BHK</p>
-        <p><strong>Locality:</strong> Pydhonie</p>
-        <p><strong>Address:</strong> xyz, yyz, zzz, Bombay-3</p>
-        <p><strong>Location:</strong> <a href="https://www.google.com/search?q=pydhonie">live location</a></p>
-        <p><strong>Contact:</strong> 9152549454</p>
-        <p><strong>Type:</strong> Rent</p>
-        <p><strong>Amount:</strong> 35k/month</p>
-        <p><strong>Size:</strong> 500 sq.ft</p>
-        <p><strong>Availability:</strong> after 1 month</p>
-    </div>
+    <hr>
+</div>
 </body>
 </html>
