@@ -5,7 +5,7 @@ pending implementatioin's
 <!-- user interfave  for purchsing -->
 <!-- user interface for seliing  -->
 
-<!-- after login 2 options 1)commercial prop.    2)residencial prop. 
+<!-- after login 2 options 1)commercial prop.     2)residencial prop. 
     {though our main focus should be on residencial prop ,then too we've to add that option(just to signify that this is our future plan)} -->
     [commercial pe click kar ne k baad ek tab khulaga jis likha hoga sorry work in progress something like that]
     [residencial pe click kia to pura aage ka view kar sakta hai]
