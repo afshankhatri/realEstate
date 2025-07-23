@@ -12,7 +12,7 @@ pending implementatioin's
     
 <!-- residencial me ane k baad 2 options 1)owenership    2)rent -->
 <!-- then is k baad dono k andar k interfaces siilar honge (may be 19/20)  -->
-<!-- search option dena hai is se home k koi specific catogory i.e> ( prticular area / budget / specified aount ) k basis pe ghr sort ho k milee-->
+<!-- search option dena hai is se home k koi specific catogory i.e> ( prticular area / budget / specified aount ) k basis pe ghr sort ho k milee-->  
 <!-- filter option just similar to (option provided by other e-commerce website to filte brand / gender / size / aount / ratings etc.) -->
 
 <!-- if time permits UI/UX pe thoda dhiyan dege k better ho!!! -->
